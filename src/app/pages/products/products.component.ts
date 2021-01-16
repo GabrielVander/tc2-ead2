@@ -19,4 +19,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteProduct(id: string): void {
+    this.productService.deleteProduct(id);
+  }
 }

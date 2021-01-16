@@ -12,8 +12,16 @@ export class ProductService {
   #apiUrl = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) {
-    httpClient.get<Product[]>(`${this.#apiUrl}/products`)
+    this.getProducts();
+  }
+
+  private getProducts(): void {
+    this.httpClient.get<Product[]>(`${this.#apiUrl}/products`)
       .subscribe(value => this.products.next(value));
   }
 
+  public deleteProduct(id: string): void {
+    this.httpClient.delete(this.#apiUrl + '/products/' + id)
+      .subscribe(() => this.getProducts());
+  }
 }

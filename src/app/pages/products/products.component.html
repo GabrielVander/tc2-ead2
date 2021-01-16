@@ -11,6 +11,13 @@
     <p nz-list-item-extra>
         {{ product.price | currency }}
     </p>
+    <ul nz-list-item-actions>
+      <nz-list-item-action>
+        <a (click)="deleteProduct(product._id)">
+          <i nz-icon nzType="delete" nzTheme="fill" style="color: orangered"></i>
+        </a>
+      </nz-list-item-action>
+    </ul>
   </nz-list-item>
   <nz-list-empty *ngIf="data.length === 0"></nz-list-empty>
 </nz-list>

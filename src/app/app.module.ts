@@ -14,6 +14,12 @@ import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {NzMenuModule} from 'ng-zorro-antd/menu';
 import {NzListModule} from 'ng-zorro-antd/list';
 import {NzTypographyModule} from 'ng-zorro-antd/typography';
+import {NzIconModule} from 'ng-zorro-antd/icon';
+import {IconDefinition} from '@ant-design/icons-angular';
+
+import {DeleteFill} from '@ant-design/icons-angular/icons';
+
+const icons: IconDefinition[] = [DeleteFill];
 
 registerLocaleData(en);
 
@@ -31,7 +37,8 @@ registerLocaleData(en);
     NzLayoutModule,
     NzMenuModule,
     NzListModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzIconModule.forRoot(icons)
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]
