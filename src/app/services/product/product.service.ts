@@ -13,7 +13,7 @@ export class ProductService {
   addProductModalIsVisible = new BehaviorSubject<boolean>(false);
   saving = new BehaviorSubject<boolean>(false);
 
-  #apiUrl = 'http://localhost:3000';
+  #apiUrl = 'https://tc2-ead2.herokuapp.com';
 
   constructor(private httpClient: HttpClient) {
     this.getProducts();
