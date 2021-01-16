@@ -11,6 +11,13 @@ import { ProductDrawerComponent } from './product-drawer/product-drawer.componen
 import {NzDrawerModule} from 'ng-zorro-antd/drawer';
 import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
 import {NzDividerModule} from 'ng-zorro-antd/divider';
+import { ProductModalComponent } from './product-modal/product-modal.component';
+import {NzModalModule} from 'ng-zorro-antd/modal';
+import { ProductFormComponent } from './product-form/product-form.component';
+import {NzFormModule} from 'ng-zorro-antd/form';
+import {ReactiveFormsModule} from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import {NzInputNumberModule} from 'ng-zorro-antd/input-number';
 
 @NgModule({
   imports: [
@@ -21,9 +28,14 @@ import {NzDividerModule} from 'ng-zorro-antd/divider';
     NzButtonModule,
     NzDrawerModule,
     NzDescriptionsModule,
-    NzDividerModule
+    NzDividerModule,
+    NzModalModule,
+    NzFormModule,
+    ReactiveFormsModule,
+    NzInputModule,
+    NzInputNumberModule
   ],
-  declarations: [ProductsComponent, ProductDrawerComponent],
+  declarations: [ProductsComponent, ProductDrawerComponent, ProductModalComponent, ProductFormComponent],
   exports: [ProductsComponent]
 })
 export class ProductsModule {

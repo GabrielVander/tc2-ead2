@@ -10,6 +10,8 @@ export class ProductService {
 
   products = new BehaviorSubject<Product[]>([]);
   selectedProduct = new BehaviorSubject<Product>(null);
+  addProductModalIsVisible = new BehaviorSubject<boolean>(false);
+  saving = new BehaviorSubject<boolean>(false);
 
   #apiUrl = 'http://localhost:3000';
 
@@ -29,6 +31,24 @@ export class ProductService {
 
   public deselectProduct(): void {
     this.selectedProduct.next(null);
+  }
+
+  public showAddProductModal(): void {
+    this.addProductModalIsVisible.next(true);
+  }
+
+  public hideAddProductModal(): void {
+    this.addProductModalIsVisible.next(false);
+  }
+
+  public saveProduct(product: Product): void {
+    this.saving.next(true);
+    this.httpClient.post(this.#apiUrl + '/products', product)
+      .subscribe(() => {
+        this.saving.next(false);
+        this.hideAddProductModal();
+        this.getProducts();
+      });
   }
 
   private getProducts(): void {

@@ -20,6 +20,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 import {DeleteFill} from '@ant-design/icons-angular/icons';
 
@@ -46,7 +49,10 @@ registerLocaleData(en);
     NzButtonModule,
     NzDrawerModule,
     NzDescriptionsModule,
-    NzDividerModule
+    NzDividerModule,
+    NzModalModule,
+    NzFormModule,
+    NzInputNumberModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]

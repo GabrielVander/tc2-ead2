@@ -1,0 +1,8 @@
+<nz-modal [(nzVisible)]="isVisible" nzTitle="New product" (nzOnCancel)="handleCancel()" [nzFooter]="modalFooter">
+  <ng-container *nzModalContent>
+    <app-product-form></app-product-form>
+  </ng-container>
+  <ng-template #modalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+  </ng-template>
+</nz-modal>

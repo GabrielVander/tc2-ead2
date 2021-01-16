@@ -26,4 +26,8 @@ export class ProductsComponent implements OnInit {
   openDrawer(id: string): void {
     this.productService.selectProduct(id);
   }
+
+  add(): void {
+    this.productService.showAddProductModal();
+  }
 }

@@ -1,0 +1,25 @@
+<form nz-form [nzLayout]="validateForm.get('formLayout')?.value" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label>Title</nz-form-label>
+    <nz-form-control nzErrorTip="Please input a title">
+      <input nz-input formControlName="title" placeholder="Avocado"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Description</nz-form-label>
+    <nz-form-control nzErrorTip="Please input a description">
+      <input nz-input formControlName="description" placeholder="A weird fruit"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Price</nz-form-label>
+    <nz-form-control nzErrorTip="Please input a description">
+      <nz-input-number formControlName="price" [nzMin]="1" [nzStep]="0.01" [nzPlaceHolder]="'4.45'"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item style="text-align: center">
+    <nz-form-control>
+      <button nz-button [disabled]="!validateForm.valid" [nzLoading]="loading" nzType="primary">Save</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
