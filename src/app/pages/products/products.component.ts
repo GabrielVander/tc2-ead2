@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product/product.service';
 import Product from '../../models/Product';
 
@@ -21,5 +21,9 @@ export class ProductsComponent implements OnInit {
 
   deleteProduct(id: string): void {
     this.productService.deleteProduct(id);
+  }
+
+  openDrawer(id: string): void {
+    this.productService.selectProduct(id);
   }
 }

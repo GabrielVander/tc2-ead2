@@ -16,6 +16,10 @@ import {NzListModule} from 'ng-zorro-antd/list';
 import {NzTypographyModule} from 'ng-zorro-antd/typography';
 import {NzIconModule} from 'ng-zorro-antd/icon';
 import {IconDefinition} from '@ant-design/icons-angular';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 import {DeleteFill} from '@ant-design/icons-angular/icons';
 
@@ -38,7 +42,11 @@ registerLocaleData(en);
     NzMenuModule,
     NzListModule,
     NzTypographyModule,
-    NzIconModule.forRoot(icons)
+    NzIconModule.forRoot(icons),
+    NzButtonModule,
+    NzDrawerModule,
+    NzDescriptionsModule,
+    NzDividerModule
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]

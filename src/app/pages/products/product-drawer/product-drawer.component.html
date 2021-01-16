@@ -1,0 +1,11 @@
+<nz-drawer *ngIf="selectedProduct != null" (nzOnClose)="close()" [nzClosable]="true" [nzVisible]="selectedProduct != null" [nzWidth]="350">
+  <ng-container *nzDrawerContent>
+    <p class="title" style=" margin-bottom: 24px;"></p>
+    <nz-descriptions [nzColumn]="1" nzTitle="Product Details">
+      <nz-descriptions-item nzTitle="Title">{{selectedProduct.title}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Description">{{selectedProduct.description}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Created at">{{selectedProduct.createdAt}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="UpdateAt">{{selectedProduct.updatedAt}}</nz-descriptions-item>
+    </nz-descriptions>
+  </ng-container>
+</nz-drawer>
